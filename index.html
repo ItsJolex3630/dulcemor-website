@@ -32,13 +32,13 @@ nav .w{display:flex;align-items:center;justify-content:space-between}
 nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 @media(min-width:860px){.nl{display:flex}}
 /* secciones hero */
-.sec-brand{position:relative;overflow:hidden;padding:90px 0 50px;background:radial-gradient(110% 80% at 15% 8%,#fffaf1 0,#fde6ef 55%,#f8bfd7 100%)}
+.sec-brand{position:relative;overflow:hidden;padding:90px 0 60px;background:radial-gradient(110% 80% at 15% 8%,#fffaf1 0,#fde6ef 55%,#f8bfd7 100%)}
 .brand-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
 .brand-bg .dd{position:absolute;inset:0;background:radial-gradient(circle,rgba(207,63,121,.14) 2px,transparent 2.5px) 0 0/34px 34px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000);mask-image:linear-gradient(180deg,transparent,#000 30%,#000)}
 .brand-bg .dc{position:absolute;height:auto;filter:drop-shadow(0 16px 18px rgba(59,34,22,.2));opacity:.6}
-.brand-bg .d1{width:min(24vw,260px);right:-3%;top:5%;transform:rotate(14deg)}
+.brand-bg .d1{width:min(24vw,260px);right:-3%;top:5%;transform:rotate(14deg);opacity:.85}
 .brand-bg .d2{width:min(13vw,100px);left:1%;bottom:8%;transform:rotate(-12deg)}
-.brand-grid{position:relative;z-index:11;display:grid;gap:32px;align-items:center}
+.brand-grid{position:relative;z-index:1;display:grid;gap:32px;align-items:center}
 .brand-info{max-width:600px}
 .brand-title{font:700 clamp(76px,13vw,144px)/.82 var(--sc);letter-spacing:-.02em;margin:14px 0 6px;background:linear-gradient(135deg,#6b3a24 0,var(--ch) 55%,#8a4b2c 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brand-sub{display:block;font:700 clamp(24px,4.8vw,36px)/1.1 var(--sc);color:var(--pkd)}
@@ -50,12 +50,8 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 .whisk-stage{position:relative;width:min(84vw,390px);aspect-ratio:620/786;display:flex;align-items:center;justify-content:center}
 #wi{position:relative;z-index:1;width:100%;height:auto;transform:rotate(14deg);filter:drop-shadow(0 28px 34px rgba(59,34,22,.38)) drop-shadow(0 8px 10px rgba(59,34,22,.22)) drop-shadow(-8px 12px 18px rgba(59,34,22,.14));animation:whiskHover 6s ease-in-out infinite;will-change:transform}
 @keyframes whiskHover{0%,100%{transform:translateY(0) rotate(14deg)}50%{transform:translateY(-8px) rotate(16deg)}}
-.choco-drip-emitter{position:absolute;z-index:2;left:70%;top:90%;width:18px;height:24px;pointer-events:none;animation:whiskBob 6s ease-in-out infinite;will-change:transform}
-@keyframes whiskBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.choco-drop{display:block;width:9px;height:18px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 35% 30%,#5a2e19 0,#34170b 80%,#200c05 100%);box-shadow:inset 1px 1px 2px rgba(255,255,255,.45),0 3px 6px rgba(0,0,0,.35);opacity:0;transform-origin:50% 0;animation:chocoFall 3.6s infinite;will-change:transform,opacity}
-@keyframes chocoFall{0%{opacity:0;transform:scale(.2);animation-timing-function:ease-out}25%{opacity:1;transform:scale(1,1.1) translateY(4px);animation-timing-function:ease-in-out}48%{opacity:1;transform:scale(.75,1.6) translateY(22px);animation-timing-function:cubic-bezier(.55,.06,.68,.19)}75%{opacity:.9;transform:scale(.65,2) translateY(280px);animation-timing-function:ease-out}90%,100%{opacity:0;transform:scale(.4,2.4) translateY(420px)}}
-.choco-drip-border{position:absolute;left:0;right:0;bottom:-1px;height:clamp(80px,12vw,155px);background:var(--dp) repeat-x left bottom/auto 100%;z-index:10;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(24,10,4,.5))}
-.sec-showcase{position:relative;overflow:hidden;padding:80px 0;background:radial-gradient(90% 70% at 70% 35%,#25a9b2 0,#0f7882 60%,#0a535c 100%);color:#fff6ea}
+.choco-drip-border{position:absolute;left:0;right:0;top:-1px;height:clamp(80px,13vw,160px);background:var(--dp) repeat-x left top/auto 100%;z-index:10;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(24,10,4,.55))}
+.sec-showcase{position:relative;overflow:hidden;padding:clamp(105px,15vw,170px) 0 80px;background:radial-gradient(90% 70% at 70% 35%,#25a9b2 0,#0f7882 60%,#0a535c 100%);color:#fff6ea}
 .sp-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 2.6px) 0 0/38px 38px;-webkit-mask-image:linear-gradient(200deg,#000,transparent 70%);mask-image:linear-gradient(200deg,#000,transparent 70%)}
 .showcase-grid{position:relative;z-index:1;display:grid;gap:28px;align-items:center}
 .showcase-info{max-width:560px}
@@ -72,7 +68,7 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
  .brand-grid{grid-template-columns:1.1fr .9fr;gap:48px}
  .whisk-stage{width:min(100%,460px)}
  .brand-media{min-height:min(56svh,560px)}
- .sec-showcase{min-height:78svh;display:flex;align-items:center;padding:90px 0}
+ .sec-showcase{min-height:80svh;display:flex;align-items:center;padding:clamp(120px,12vw,160px) 0 90px}
  .showcase-grid{grid-template-columns:1fr 1fr;gap:48px}
  .showcase-media{min-height:min(64svh,560px)}
  .show-cone{max-height:min(68svh,600px)}
@@ -285,14 +281,13 @@ dialog.stu .btn{width:auto;margin:0;flex:none}
 <div class="brand-media">
 <div class="whisk-stage">
 <img id="wi" alt="Batidor con chocolate derretido cayendo" width="620" height="786" fetchpriority="high" decoding="async">
-<div class="choco-drip-emitter" aria-hidden="true"><span class="choco-drop"></span></div>
 </div>
 </div>
 </div>
-<div class="choco-drip-border" aria-hidden="true"></div>
 </section>
 
 <section class="sec-showcase" id="showcase">
+<div class="choco-drip-border" aria-hidden="true"></div>
 <div class="sp-bg"></div>
 <div class="w showcase-grid">
 <div class="showcase-info">
