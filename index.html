@@ -9,7 +9,7 @@
 <style>
 :root{--bg:#fff6ea;--cr:#fffcf5;--ch:#3b2216;--ch2:#5a3624;--pk:#f08bb4;--pkd:#cf3f79;--pk2:#f9c7dc;--pk3:#fde6ef;--tl:#1aa9b4;--tld:#0c7c86;--tl2:#d9f2f3;--cm:#b5834a;--mu:#7d5f4e;--ln:rgba(59,34,22,.12);--sc:'Dancing Script','Brush Script MT',cursive;--bd:'Quicksand','Nunito',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}html{max-width:100%;overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--bg);color:var(--ch);font:500 16px/1.5 var(--bd);-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%;padding-bottom:calc(118px + env(safe-area-inset-bottom))}
+body{background:var(--bg);color:var(--ch);font:500 16px/1.5 var(--bd);-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%;padding-bottom:calc(90px + env(safe-area-inset-bottom))}
 img{display:block;max-width:100%}button,input{font:inherit;color:inherit}button{background:none;border:0;cursor:pointer}a{color:inherit;text-decoration:none}button,a{touch-action:manipulation}
 :focus-visible{outline:3px solid var(--tl);outline-offset:3px;border-radius:8px}
 .w{width:min(1120px,100% - 32px);max-width:100%;margin-inline:auto}
@@ -157,7 +157,6 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 .cc h2{color:var(--ch)}.cc h2 .sc{white-space:nowrap}.cc .lead{color:var(--ch2)}.cc .eb{color:var(--pkd)}
 .cc-v{position:relative;height:clamp(360px,100vw,470px);max-width:480px;margin-inline:auto;width:100%}
 .cc-v img{position:absolute;filter:drop-shadow(0 20px 22px rgba(59,34,22,.35))}
-.cc-v .a{left:0;top:6%;width:58%;aspect-ratio:3/4;object-fit:cover;border-radius:200px 200px 22px 22px;filter:none;box-shadow:0 20px 40px rgba(59,34,22,.35)}
 .cc-v .b{right:-4%;bottom:0;width:68%;transform:rotate(8deg)}
 .cc-v .c{right:3%;top:-2%;width:34%;transform:rotate(-5deg)}
 .cc-v .s{position:absolute;left:-3%;bottom:6%;width:min(30%,130px);background:var(--ch);color:#fff6ea;border-radius:50%;aspect-ratio:1;display:grid;place-items:center;text-align:center;font:700 13px/1.1 var(--bd);transform:rotate(-10deg);box-shadow:0 10px 20px rgba(59,34,22,.35);padding:8px}.cc-v .s b{display:block;font:700 26px/.9 var(--sc);color:var(--pk2)}
@@ -173,11 +172,12 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 .dv .sc{font-size:46px;line-height:.9}.dv b{font:700 30px var(--bd)}
 @media(min-width:860px){.hr .w{grid-template-columns:1.1fr .9fr}}
 footer{padding:44px 0 20px;text-align:center;color:var(--mu);font-size:14px}footer img{margin:0 auto 10px;width:70px;height:70px}footer .sc{font-size:34px;color:var(--ch);display:block;line-height:1}
-/* barra pedido + marca */
-.bar{position:fixed;z-index:45;left:12px;right:12px;bottom:calc(42px + env(safe-area-inset-bottom));display:flex;justify-content:center;transition:transform .35s;pointer-events:none}
+.closing{padding:0 16px 52px;display:flex;justify-content:center;background:var(--bg)}
+.closing img{width:min(100%,420px);height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:200px 200px 24px 24px;box-shadow:0 20px 50px rgba(59,34,22,.25)}
+/* barra pedido */
+.bar{position:fixed;z-index:45;left:12px;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));display:flex;justify-content:center;transition:transform .35s;pointer-events:none}
 .bar.h{transform:translateY(200%)}.bar .btn{pointer-events:auto;min-width:min(100%,380px);justify-content:space-between;min-height:56px;box-shadow:0 12px 34px rgba(59,34,22,.4)}
 .bar .btn b{background:var(--pkd);border-radius:99px;min-width:30px;height:30px;display:grid;place-items:center;padding:0 8px;font-size:15px}
-.vendo-wm{position:fixed;z-index:140;left:0;right:0;bottom:0;height:28px;background:#0b0b14;color:#fff;font:600 12px/28px system-ui,sans-serif;text-align:center;letter-spacing:.04em}.vendo-wm b{color:#ffd400}
 .toast{position:fixed;z-index:150;left:50%;bottom:calc(112px + env(safe-area-inset-bottom));transform:translate(-50%,30px);opacity:0;background:var(--ch);color:#fff6ea;padding:11px 18px;border-radius:99px;font:700 14px var(--bd);transition:.3s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}.toast.on{opacity:1;transform:translate(-50%,0)}
 dialog{border:0;border-radius:28px 28px 0 0;width:min(560px,100%);max-height:88svh;margin:auto auto 0;padding:0;background:var(--cr);color:var(--ch);overflow:auto}
 dialog::backdrop{background:rgba(59,34,22,.6);backdrop-filter:blur(4px)}
@@ -289,7 +289,7 @@ dialog.stu .btn{width:auto;margin:0;flex:none}
 <div class="tb" role="tablist" id="tb"></div><div id="pns"></div></div></section>
 
 <section class="cc"><div class="drp"></div><div class="w">
-<div class="cc-v rv"><img class="c" id="cC" alt="" width="527" height="750" loading="lazy" decoding="async"><img class="a" id="cB" alt="Brownie con gelato y chocolate" width="640" height="960" loading="lazy" decoding="async"><img class="b" id="cK" alt="Galleta partida con chocolate derretido" width="606" height="586" loading="lazy" decoding="async"><div class="s"><span><b>100%</b>chocolate</span></div></div>
+<div class="cc-v rv"><img class="c" id="cC" alt="" width="527" height="750" loading="lazy" decoding="async"><img class="b" id="cK" alt="Galleta partida con chocolate derretido" width="606" height="586" loading="lazy" decoding="async"><div class="s"><span><b>100%</b>chocolate</span></div></div>
 <div><span class="eb">Amantes del chocolate</span><h2 class="rv">Para los que<br>viven por <span class="sc">el cacao</span></h2>
 <p class="lead rv">Brownies, volcán de chocolate, marquesa, cheesecake brownie y cookies rellenas. Con gelato clásico o el topping que prefieras.</p>
 <div style="margin-top:22px"><a class="btn" href="#menu" data-t="postres">Ver postres</a></div></div></div></section>
@@ -301,6 +301,7 @@ dialog.stu .btn{width:auto;margin:0;flex:none}
 <div class="cta"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dulcemor+Urb.+La+Esmeralda+San+Diego">Cómo llegar</a><a class="btn lt wal" target="_blank" rel="noopener">WhatsApp</a></div></div>
 <div class="dv rv"><span class="sc">Delivery</span><b>12:00 PM – 10:00 PM</b><p>Pide por la web y te lo llevamos. Ordena aquí con tu pedido listo.</p><a class="btn lt" href="#menu">Armar mi pedido</a></div>
 </div></section>
+<div class="closing rv"><img id="cB" alt="Brownie con gelato y chocolate" width="640" height="960" loading="lazy" decoding="async"></div>
 <footer><img id="lg2" alt="" width="70" height="70" loading="lazy" decoding="async"><span class="sc">Dulcemor</span>a tu corazón vamos a llegar · San Diego<br>Instagram [INSTAGRAM]</footer>
 
 <div class="bar h" id="bar"><button class="btn" id="ob2"><span>Mi pedido</span><b id="cnt">0</b></button></div>
@@ -333,7 +334,6 @@ dialog.stu .btn{width:auto;margin:0;flex:none}
 <div class="stu-f"><div class="n" id="sn">Elige al menos un ingrediente</div><button class="btn pk" id="sadd" disabled>Agregar a mi pedido</button></div>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
-<div class="vendo-wm">Página demo por <b>VENDO</b></div>
 
 <script>/* Dulcemor · Chef de pizzas (motor por reglas)
    Aplica el prompt maestro: máx. 4 ingredientes elegidos; masa, salsa de tomate y mozzarella
