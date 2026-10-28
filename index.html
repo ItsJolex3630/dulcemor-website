@@ -36,7 +36,7 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 .brand-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
 .brand-glow{position:absolute;top:15%;right:15%;width:min(70vw,600px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.85) 0,rgba(253,230,239,.4) 55%,transparent 75%);filter:blur(40px)}
 .brand-bg .dd{position:absolute;inset:0;background:radial-gradient(circle,rgba(207,63,121,.12) 2px,transparent 2.5px) 0 0/34px 34px;-webkit-mask-image:linear-gradient(180deg,transparent 5%,#000 30%,#000 85%,transparent 100%);mask-image:linear-gradient(180deg,transparent 5%,#000 30%,#000 85%,transparent 100%)}
-.brand-wrap{position:relative;z-index:1;display:grid;gap:48px;align-items:center}
+.brand-wrap{position:relative;z-index:2;display:grid;gap:48px;align-items:center}
 .brand-editorial{max-width:580px}
 .brand-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 10px;border-radius:99px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px rgba(207,63,121,.18),0 4px 12px rgba(59,34,22,.05);font:700 11.5px/1 var(--bd);letter-spacing:.12em;color:var(--tld);margin-bottom:16px}
 .eb-dot{width:7px;height:7px;border-radius:50%;background:var(--pkd);box-shadow:0 0 0 3px rgba(207,63,121,.2)}
@@ -54,7 +54,8 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 .brand-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:clamp(340px,45svh,540px)}
 .stage-aura{position:absolute;width:min(90%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75) 0,rgba(254,226,237,.45) 58%,transparent 72%);box-shadow:0 20px 60px rgba(207,63,121,.1);pointer-events:none;z-index:0}
 .stage-cookie-split{position:absolute;right:-2%;top:-4%;width:min(34vw,220px);height:auto;transform:rotate(18deg);filter:drop-shadow(0 16px 20px rgba(59,34,22,.28));z-index:1;animation:floatCookie 7s ease-in-out infinite}
-.stage-whisk-wrap{position:relative;z-index:2;width:min(80vw,380px);animation:floatWhisk 6s ease-in-out infinite}
+.stage-whisk-wrap{position:relative;z-index:4;width:min(80vw,380px);animation:floatWhisk 6s ease-in-out infinite}
+.whisk-drip-anchor{position:absolute;left:71.5%;top:95.5%;width:4px;height:4px;pointer-events:none;opacity:0}
 .stage-whisk{width:100%;height:auto;transform:rotate(12deg);filter:drop-shadow(0 28px 36px rgba(59,34,22,.38)) drop-shadow(0 8px 12px rgba(59,34,22,.2))}
 .stage-cookie-whole{position:absolute;left:2%;bottom:4%;width:min(22vw,130px);height:auto;transform:rotate(-16deg);filter:drop-shadow(0 14px 18px rgba(59,34,22,.24));z-index:3;animation:floatCookieAlt 8s ease-in-out infinite}
 .stage-seal{position:absolute;right:6%;bottom:8%;z-index:4;width:96px;height:96px;border-radius:50%;background:var(--ch);color:#fff6ea;box-shadow:0 12px 28px rgba(59,34,22,.38),inset 0 0 0 2px rgba(240,139,180,.3);display:grid;place-items:center;text-align:center;transform:rotate(-8deg);animation:sealPulse 5s ease-in-out infinite}
@@ -83,8 +84,8 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
  .stage-seal{width:78px;height:78px;right:10%;bottom:4%}
  .seal-inner b{font-size:20px}
 }
-.choco-flow-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:12;overflow:visible}
-.choco-drip-border{position:absolute;left:0;right:0;top:-1px;height:clamp(80px,13vw,160px);background:var(--dp) repeat-x left top/auto 100%;z-index:10;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(24,10,4,.55));will-change:clip-path;clip-path:ellipse(0px 0px at 50% 0px)}
+.choco-flow-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.choco-drip-border{position:absolute;left:0;right:0;top:-1px;height:clamp(80px,13vw,160px);background:var(--dp) repeat-x left top/auto 100%;z-index:10;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(24,10,4,.55));will-change:clip-path;clip-path:ellipse(0px 0px at 50% 0px);transition:clip-path .04s ease-out}
 @media (prefers-reduced-motion: reduce){
  .choco-flow-canvas{display:none!important}
  .choco-drip-border{clip-path:none!important}
@@ -330,6 +331,7 @@ Gelato artesanal cremoso de sabores especiales, postres indulgentes y pizzas de 
 
 <div class="stage-whisk-wrap">
 <img class="stage-whisk" id="wi" alt="Batidor con chocolate derretido" width="620" height="786" fetchpriority="high" decoding="async">
+<span class="whisk-drip-anchor" id="whiskDripAnchor" aria-hidden="true"></span>
 </div>
 
 <img class="stage-cookie-whole" id="d2" alt="Cookie artesanal" width="362" height="288" loading="lazy" decoding="async">
@@ -343,12 +345,12 @@ Gelato artesanal cremoso de sabores especiales, postres indulgentes y pizzas de 
 <defs>
 <linearGradient id="chocoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
 <stop offset="0%" stop-color="#4a2110"/>
-<stop offset="35%" stop-color="#693318"/>
-<stop offset="70%" stop-color="#34160b"/>
+<stop offset="30%" stop-color="#693318"/>
+<stop offset="65%" stop-color="#3b170c"/>
 <stop offset="100%" stop-color="#240c04"/>
 </linearGradient>
 <filter id="chocoGlow" x="-20%" y="-20%" width="140%" height="140%">
-<feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#220b03" flood-opacity="0.4"/>
+<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#220b03" flood-opacity="0.35"/>
 </filter>
 </defs>
 <path id="chocoStream" d="" fill="url(#chocoGrad)" filter="url(#chocoGlow)"/>
@@ -1127,48 +1129,48 @@ sync();
 </script>
 <script>
 (function(){
- const brand=$('#top'),scCase=$('#showcase'),wi=$('#wi');
+ const brand=$('#top'),scCase=$('#showcase'),anchor=$('#whiskDripAnchor');
  const stream=$('#chocoStream'),pool=$('#chocoPool'),drip=$('#chocoDripBorder');
- if(!brand||!scCase||!wi||!stream||!pool||!drip)return;
+ if(!brand||!scCase||!anchor||!stream||!pool||!drip)return;
  if(matchMedia('(prefers-reduced-motion: reduce)').matches){drip.style.clipPath='none';return;}
  let tick=false;
  function updateChoco(){
   tick=false;
-  const bRect=brand.getBoundingClientRect(),wRect=wi.getBoundingClientRect(),scRect=scCase.getBoundingClientRect();
-  const p=Math.max(0,Math.min(1,window.scrollY/Math.max(1,brand.offsetHeight*.75)));
-  // Punta de chocolate de #wi dentro de su caja rotada.
-  const originX=wRect.left+wRect.width*.67-bRect.left;
-  const originY=wRect.top+wRect.height*.92-bRect.top;
+  const bRect=brand.getBoundingClientRect(),aRect=anchor.getBoundingClientRect(),scRect=scCase.getBoundingClientRect();
+  const p=Math.max(0,Math.min(1,window.scrollY/Math.max(1,brand.offsetHeight*1.4)));
+  const originX=aRect.left+aRect.width*.5-bRect.left;
+  const originY=aRect.top+aRect.height*.5-bRect.top;
   const destY=scRect.top-bRect.top;
-  const destX=originX+(window.innerWidth>=860?-15:0);
-  const streamP=Math.max(0,Math.min(1,(p-.04)/.38));
-  if(streamP>0&&p<.95){
-   const tipY=originY+(destY-originY)*Math.min(1,streamP*1.05);
-   const t=Math.max(3,10*(1-streamP*.45));
-   stream.setAttribute('d',`M ${originX-t} ${originY} Q ${originX-t*.5} ${(originY+tipY)/2}, ${destX-t*.6} ${tipY} L ${destX+t*.6} ${tipY} Q ${originX+t*.5} ${(originY+tipY)/2}, ${originX+t} ${originY} Z`);
-   stream.style.opacity=p>.85?String(Math.max(0,(.95-p)/.1)):'1';
+  const destX=originX+(window.innerWidth>=860?-12:0);
+  const streamP=Math.max(0,Math.min(1,(p-.03)/.42));
+  if(streamP>0){
+   const tipY=originY+(destY-originY)*Math.min(1,streamP);
+   const topT=2.5,botT=Math.max(2.5,4.5*streamP),midY=(originY+tipY)*.5;
+   stream.setAttribute('d',`M ${originX-topT} ${originY} Q ${originX-topT*.8} ${midY}, ${destX-botT} ${tipY} L ${destX+botT} ${tipY} Q ${originX+topT*.8} ${midY}, ${originX+topT} ${originY} Z`);
+   stream.style.opacity='1';
   }else{
    stream.setAttribute('d','');
   }
-  const impactP=Math.max(0,Math.min(1,(p-.36)/.28));
-  if(impactP>0&&p<.95){
+  const impactP=Math.max(0,Math.min(1,(p-.38)/.35));
+  if(impactP>0){
    pool.setAttribute('cx',String(destX));
    pool.setAttribute('cy',String(destY));
-   pool.setAttribute('rx',String(impactP*46));
-   pool.setAttribute('ry',String(impactP*14));
-   pool.style.opacity=p>.85?String(Math.max(0,(.95-p)/.1)):'1';
+   pool.setAttribute('rx',String(impactP*36));
+   pool.setAttribute('ry',String(impactP*12));
+   pool.style.opacity='1';
   }else{
    pool.setAttribute('rx','0');pool.setAttribute('ry','0');
   }
-  const spreadP=Math.max(0,Math.min(1,(p-.46)/.5));
-  if(p>=.96){
+  const spreadP=Math.max(0,Math.min(1,(p-.50)/.48));
+  if(p>=.98){
    drip.style.clipPath='none';
   }else if(spreadP>0){
-   const radiusX=Math.pow(spreadP,1.35)*Math.max(window.innerWidth*1.35,1600);
-   const radiusY=90+spreadP*140;
-   drip.style.clipPath=`ellipse(${radiusX.toFixed(1)}px ${radiusY.toFixed(1)}px at ${destX.toFixed(1)}px 0px)`;
+   const radiusX=Math.pow(spreadP,1.45)*Math.max(window.innerWidth*1.3,1500);
+   const radiusY=75+spreadP*115;
+   const impactXViewport=aRect.left+aRect.width*.5;
+   drip.style.clipPath=`ellipse(${radiusX.toFixed(1)}px ${radiusY.toFixed(1)}px at ${impactXViewport.toFixed(1)}px 0px)`;
   }else{
-   drip.style.clipPath=`ellipse(0px 0px at ${destX.toFixed(1)}px 0px)`;
+   drip.style.clipPath=`ellipse(0px 0px at ${(aRect.left+aRect.width*.5).toFixed(1)}px 0px)`;
   }
  }
  window.addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(updateChoco);tick=true;}},{passive:true});
