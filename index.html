@@ -32,24 +32,57 @@ nav .w{display:flex;align-items:center;justify-content:space-between}
 nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 @media(min-width:860px){.nl{display:flex}}
 /* secciones hero */
-.sec-brand{position:relative;overflow:hidden;padding:90px 0 60px;background:radial-gradient(110% 80% at 15% 8%,#fffaf1 0,#fde6ef 55%,#f8bfd7 100%)}
+.sec-brand{position:relative;overflow:hidden;padding:100px 0 80px;background:radial-gradient(120% 90% at 20% 10%,#fffbf5 0,#fde9f2 50%,#f7c3da 100%);color:var(--ch)}
 .brand-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
-.brand-bg .dd{position:absolute;inset:0;background:radial-gradient(circle,rgba(207,63,121,.14) 2px,transparent 2.5px) 0 0/34px 34px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000);mask-image:linear-gradient(180deg,transparent,#000 30%,#000)}
-.brand-bg .dc{position:absolute;height:auto;filter:drop-shadow(0 16px 18px rgba(59,34,22,.2));opacity:.6}
-.brand-bg .d1{width:min(24vw,260px);right:-3%;top:5%;transform:rotate(14deg);opacity:.85}
-.brand-bg .d2{width:min(13vw,100px);left:1%;bottom:8%;transform:rotate(-12deg)}
-.brand-grid{position:relative;z-index:1;display:grid;gap:32px;align-items:center}
-.brand-info{max-width:600px}
-.brand-title{font:700 clamp(76px,13vw,144px)/.82 var(--sc);letter-spacing:-.02em;margin:14px 0 6px;background:linear-gradient(135deg,#6b3a24 0,var(--ch) 55%,#8a4b2c 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.brand-sub{display:block;font:700 clamp(24px,4.8vw,36px)/1.1 var(--sc);color:var(--pkd)}
-.brand-artesanal{margin-top:28px;max-width:480px;padding:20px 22px;border:1px solid rgba(207,63,121,.15);border-radius:24px;background:rgba(255,252,245,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 16px 36px -18px rgba(59,34,22,.25)}
-.art-tag{display:block;font:700 28px/1 var(--sc);color:var(--pkd);margin-bottom:4px}
-.brand-artesanal h2{font:700 clamp(22px,3vw,30px)/1.1 var(--bd);color:var(--ch);margin:0 0 6px;letter-spacing:normal}
-.brand-artesanal p{color:var(--mu);font-size:15px;line-height:1.45}
-.brand-media{position:relative;display:flex;align-items:center;justify-content:center;min-height:clamp(260px,38svh,380px)}
-.whisk-stage{position:relative;width:min(84vw,390px);aspect-ratio:620/786;display:flex;align-items:center;justify-content:center}
-#wi{position:relative;z-index:1;width:100%;height:auto;transform:rotate(14deg);filter:drop-shadow(0 28px 34px rgba(59,34,22,.38)) drop-shadow(0 8px 10px rgba(59,34,22,.22)) drop-shadow(-8px 12px 18px rgba(59,34,22,.14));animation:whiskHover 6s ease-in-out infinite;will-change:transform}
-@keyframes whiskHover{0%,100%{transform:translateY(0) rotate(14deg)}50%{transform:translateY(-8px) rotate(16deg)}}
+.brand-glow{position:absolute;top:15%;right:15%;width:min(70vw,600px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.85) 0,rgba(253,230,239,.4) 55%,transparent 75%);filter:blur(40px)}
+.brand-bg .dd{position:absolute;inset:0;background:radial-gradient(circle,rgba(207,63,121,.12) 2px,transparent 2.5px) 0 0/34px 34px;-webkit-mask-image:linear-gradient(180deg,transparent 5%,#000 30%,#000 85%,transparent 100%);mask-image:linear-gradient(180deg,transparent 5%,#000 30%,#000 85%,transparent 100%)}
+.brand-wrap{position:relative;z-index:1;display:grid;gap:48px;align-items:center}
+.brand-editorial{max-width:580px}
+.brand-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 10px;border-radius:99px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px rgba(207,63,121,.18),0 4px 12px rgba(59,34,22,.05);font:700 11.5px/1 var(--bd);letter-spacing:.12em;color:var(--tld);margin-bottom:16px}
+.eb-dot{width:7px;height:7px;border-radius:50%;background:var(--pkd);box-shadow:0 0 0 3px rgba(207,63,121,.2)}
+.eb-badge{padding:2px 7px;border-radius:99px;background:var(--pk3);color:var(--pkd);font-size:10px;letter-spacing:.04em}
+.brand-title{font:700 clamp(78px,14vw,150px)/.82 var(--sc);letter-spacing:-.02em;color:#3b2216;text-shadow:0 6px 24px rgba(59,34,22,.1);margin:0 0 8px}
+.brand-sub{display:block;font:700 clamp(24px,5vw,40px)/1.1 var(--sc);color:var(--pkd);text-shadow:0 2px 10px rgba(207,63,121,.15)}
+.brand-lead{margin:22px 0 26px;font-size:clamp(15.5px,2vw,18px);line-height:1.55;color:#5a3624;font-weight:600;max-width:48ch}
+.brand-features{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.feat-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:99px;background:rgba(255,252,245,.9);border:1px solid rgba(181,131,74,.25);box-shadow:0 4px 14px rgba(59,34,22,.04);font:700 13.5px var(--bd);color:var(--ch)}
+.feat-icon{font-size:15px}
+.brand-cta-row{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
+.brand-cta-row .btn.pk{min-height:52px;padding:0 30px;font-size:16px;box-shadow:0 10px 26px rgba(207,63,121,.4)}
+.brand-quick-link{font:700 14px var(--bd);color:var(--tld);display:inline-flex;align-items:center;gap:4px;padding:8px 12px;transition:transform .15s,color .15s}
+.brand-quick-link:hover{transform:translateY(2px);color:var(--ch)}
+.brand-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:clamp(340px,45svh,540px)}
+.stage-aura{position:absolute;width:min(90%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75) 0,rgba(254,226,237,.45) 58%,transparent 72%);box-shadow:0 20px 60px rgba(207,63,121,.1);pointer-events:none;z-index:0}
+.stage-cookie-split{position:absolute;right:-2%;top:-4%;width:min(34vw,220px);height:auto;transform:rotate(18deg);filter:drop-shadow(0 16px 20px rgba(59,34,22,.28));z-index:1;animation:floatCookie 7s ease-in-out infinite}
+.stage-whisk-wrap{position:relative;z-index:2;width:min(80vw,380px);animation:floatWhisk 6s ease-in-out infinite}
+.stage-whisk{width:100%;height:auto;transform:rotate(12deg);filter:drop-shadow(0 28px 36px rgba(59,34,22,.38)) drop-shadow(0 8px 12px rgba(59,34,22,.2))}
+.stage-cookie-whole{position:absolute;left:2%;bottom:4%;width:min(22vw,130px);height:auto;transform:rotate(-16deg);filter:drop-shadow(0 14px 18px rgba(59,34,22,.24));z-index:3;animation:floatCookieAlt 8s ease-in-out infinite}
+.stage-seal{position:absolute;right:6%;bottom:8%;z-index:4;width:96px;height:96px;border-radius:50%;background:var(--ch);color:#fff6ea;box-shadow:0 12px 28px rgba(59,34,22,.38),inset 0 0 0 2px rgba(240,139,180,.3);display:grid;place-items:center;text-align:center;transform:rotate(-8deg);animation:sealPulse 5s ease-in-out infinite}
+.seal-inner{font:700 12px/1 var(--bd);text-transform:uppercase;letter-spacing:.08em}
+.seal-inner b{display:block;font:700 24px/.95 var(--sc);color:var(--pk2);margin-bottom:2px}
+@keyframes floatWhisk{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}
+@keyframes floatCookie{0%,100%{transform:translateY(0) rotate(18deg)}50%{transform:translateY(-7px) rotate(21deg)}}
+@keyframes floatCookieAlt{0%,100%{transform:translateY(0) rotate(-16deg)}50%{transform:translateY(-6px) rotate(-13deg)}}
+@keyframes sealPulse{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(-5deg) scale(1.04)}}
+@media(min-width:860px){
+ .sec-brand{min-height:90svh;display:flex;align-items:center;padding:90px 0 70px}
+ .brand-wrap{grid-template-columns:1.15fr .85fr;gap:56px}
+ .stage-whisk-wrap{width:min(100%,440px)}
+ .stage-cookie-split{width:230px;right:-4%;top:-6%}
+ .stage-cookie-whole{width:140px;left:-2%;bottom:6%}
+}
+@media(max-width:859px){
+ .sec-brand{padding:85px 0 60px;text-align:center}
+ .brand-editorial{margin-inline:auto}
+ .brand-eyebrow{justify-content:center}
+ .brand-features{justify-content:center}
+ .brand-cta-row{justify-content:center}
+ .brand-stage{min-height:320px;margin-top:10px}
+ .stage-cookie-split{width:130px;right:2%;top:0%}
+ .stage-cookie-whole{width:90px;left:6%;bottom:2%}
+ .stage-seal{width:78px;height:78px;right:10%;bottom:4%}
+ .seal-inner b{font-size:20px}
+}
 .choco-drip-border{position:absolute;left:0;right:0;top:-1px;height:clamp(80px,13vw,160px);background:var(--dp) repeat-x left top/auto 100%;z-index:10;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(24,10,4,.55))}
 .sec-showcase{position:relative;overflow:hidden;padding:clamp(105px,15vw,170px) 0 80px;background:radial-gradient(90% 70% at 70% 35%,#25a9b2 0,#0f7882 60%,#0a535c 100%);color:#fff6ea}
 .sp-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 2.6px) 0 0/38px 38px;-webkit-mask-image:linear-gradient(200deg,#000,transparent 70%);mask-image:linear-gradient(200deg,#000,transparent 70%)}
@@ -64,19 +97,10 @@ nav .btn{min-height:44px;padding:0 20px;font-size:14px}
 .showcase-media::before{content:"";position:absolute;width:min(86%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 66%);filter:blur(2px);z-index:0}
 .show-cone{position:relative;z-index:1;max-height:48svh;width:auto;max-width:100%;height:auto;filter:drop-shadow(0 26px 30px rgba(0,0,0,.35))}
 @media(min-width:860px){
- .sec-brand{min-height:88svh;display:flex;align-items:center;padding:80px 0 56px}
- .brand-grid{grid-template-columns:1.1fr .9fr;gap:48px}
- .whisk-stage{width:min(100%,460px)}
- .brand-media{min-height:min(56svh,560px)}
  .sec-showcase{min-height:80svh;display:flex;align-items:center;padding:clamp(120px,12vw,160px) 0 90px}
  .showcase-grid{grid-template-columns:1fr 1fr;gap:48px}
  .showcase-media{min-height:min(64svh,560px)}
  .show-cone{max-height:min(68svh,600px)}
-}
-@media(max-width:559px){
- .brand-bg .dc{opacity:.45}
- .brand-bg .d1{width:92px;right:-14px;top:82px}
- .brand-bg .d2{width:68px;left:-10px;bottom:12px}
 }
 /* scallop strip */
 .sw{position:relative;z-index:4;margin-top:-1px;background:var(--pkd);color:#fff;padding:14px 0 22px;overflow:hidden;-webkit-mask:radial-gradient(circle 14px at 14px calc(100% - 0px),transparent 98%,#000) bottom/28px 100% repeat-x;mask:radial-gradient(circle 14px at 14px 100%,transparent 98%,#000) bottom/28px 100% repeat-x}
@@ -263,24 +287,50 @@ dialog.stu .btn{width:auto;margin:0;flex:none}
 
 <section class="sec-brand" id="top">
 <div class="brand-bg">
+<div class="brand-glow"></div>
 <div class="dd"></div>
-<img class="dc d1" id="d1" alt="" width="606" height="586" loading="eager" decoding="async">
-<img class="dc d2" id="d2" alt="" width="362" height="288" loading="lazy" decoding="async">
 </div>
-<div class="w brand-grid">
-<div class="brand-info">
-<span class="eb">San Diego · Gelato · Postres · Pizzas</span>
+
+<div class="w brand-wrap">
+<div class="brand-editorial">
+<div class="brand-eyebrow">
+<span class="eb-dot"></span>
+<span class="eb-text">SAN DIEGO · CARABOBO</span>
+<span class="eb-badge">Artesanal</span>
+</div>
+
 <h1 class="brand-title">Dulcemor</h1>
 <span class="brand-sub">a tu corazón vamos a llegar</span>
-<div class="brand-artesanal">
-<span class="sc art-tag">hecho a mano</span>
-<h2>Gelato artesanal y repostería</h2>
-<p>Cremoso, de sabores especiales, con ingredientes nobles y preparado con amor cada día.</p>
+
+<p class="brand-lead">
+Gelato artesanal cremoso de sabores especiales, postres indulgentes y pizzas de masa madre, preparados cada día con ingredientes nobles.
+</p>
+
+<div class="brand-features">
+<div class="feat-pill"><span class="feat-icon">🍦</span> Gelato cremoso</div>
+<div class="feat-pill"><span class="feat-icon">🍫</span> Cacao puro</div>
+<div class="feat-pill"><span class="feat-icon">🍕</span> Masa madre</div>
+</div>
+
+<div class="brand-cta-row">
+<a class="btn pk" href="#menu">Explorar postres y menú</a>
+<a class="brand-quick-link" href="#showcase">Ver especialidades ↓</a>
 </div>
 </div>
-<div class="brand-media">
-<div class="whisk-stage">
-<img id="wi" alt="Batidor con chocolate derretido cayendo" width="620" height="786" fetchpriority="high" decoding="async">
+
+<div class="brand-stage">
+<div class="stage-aura"></div>
+
+<img class="stage-cookie-split" id="d1" alt="Galleta con chocolate derretido" width="606" height="586" loading="eager" decoding="async">
+
+<div class="stage-whisk-wrap">
+<img class="stage-whisk" id="wi" alt="Batidor con chocolate derretido" width="620" height="786" fetchpriority="high" decoding="async">
+</div>
+
+<img class="stage-cookie-whole" id="d2" alt="Cookie artesanal" width="362" height="288" loading="lazy" decoding="async">
+
+<div class="stage-seal">
+<span class="seal-inner"><b>100%</b>Artesanal</span>
 </div>
 </div>
 </div>
